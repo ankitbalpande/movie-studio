@@ -1,0 +1,94 @@
+<div className=' bg-no-repeat bg-current bg-cover bg-right'   style={{  backgroundImage: `linear-gradient(to right, rgb(0 0 0 / 85%) 32%, #471b1bc2 100%), url(${baseUrl}${data.backdrop_path})`, }}>
+        <div className="lg:px-24 md:px-10 py-10 px-2">
+          <div className="py-8 ">
+              <div className="flex gap-5 md:flex-row flex-col justify-center">
+                  <div className="sm:w-96"><img src={`${baseUrl}${data.poster_path}`} alt="" /></div>
+                  <div className="md:w-[calc(100%_-_384px)] w-full p-5 text-white">
+                      <div className="flex flex-col gap-2">
+                        <h1 className=' text-4xl font-bold'>{data.original_title || data.original_name } <span className="font-normal">(<span>{data.release_date?.split('-')[0] || data.first_air_date?.split('-')[0]}</span>)</span></h1>
+                        <p > Date : {data.release_date ? data.release_date.split('-').reverse().join('/')  : data.first_air_date ? data.first_air_date.split('-').reverse().join('/') : 'N/A'  }</p>
+                        <p>Language : <span className="uppercase">{data.original_language}</span></p>
+                        <div className="w-full  flex flex-wrap  items-center gap-3 pt-2">
+                          <span className="w-16 h-16  bg-black p-1 rounded-full multi transition-all duration-300 scale-[1] hover:scale-[1.1]">
+                            <CircularProgress  percentage={data.vote_average.toFixed(1) * 10}/>
+                          </span>
+                          <p className='text-lg font-semibold'>User Score</p>
+                        </div>
+                        <div className="flex gap-3">
+                          <p className='text-lg font-semibold'>Genre:</p>
+                          {data.genre_ids.map((item, index) => (
+                            <span key={index}>{item}</span>
+                          ))}
+                        </div>
+                        <div className="pt-3">
+                          <p className='text-lg font-semibold pb-2'>Overview</p>
+                          <span className=' '>{data.overview}</span>
+                        </div>
+                        <div className=" mt-4">
+                          <button className='flex gap-2 items-center text-white  border bg-gradient-to-r from-[#1F1C18] to-[#8E0E00]  sm:px-6 px-2 py-2 text-base rounded-full  active:bg-gradient-to-r  active:from-[#8E0E00]  active:to-[#1F1C18] transition-all duration-300 scale-[1] hover:scale-[1.1]'> <FaPlay/> Play Trailer</button>
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div> 
+        </div>
+    </div>
+
+
+
+
+
+
+    const location = useLocation();
+    const { data } = location.state || {}; // Get the data passed via navigate
+  
+    if (!data) return <p>No movie data available</p>;
+    const baseUrl = "https://image.tmdb.org/t/p/w500";
+
+
+
+
+
+
+
+
+
+    <div>
+      <div className=' bg-no-repeat bg-current bg-cover bg-right'   style={{  backgroundImage: `linear-gradient(to right, rgb(0 0 0 / 85%) 32%, #471b1bc2 100%), url(${baseUrl}${data.backdrop_path})`, }}>
+        <div className="lg:px-24 md:px-10 py-10 px-2">
+          <div className="py-8 ">
+              <div className="flex gap-5">
+                  <div className="w-96"><img src={`${baseUrl}${data.poster_path}`} alt="" /></div>
+                  <div className="w-[calc(100%_-_384px)] p-5 text-white">
+                      <div className="flex flex-col gap-2">
+                        <h1 className=' text-4xl font-bold'>{data.original_title || data.original_name } <span className="font-normal">(<span>{data.release_date?.split('-')[0] || data.first_air_date?.split('-')[0]}</span>)</span></h1>
+                        <p > Date : {data.release_date ? data.release_date.split('-').reverse().join('/')  : data.first_air_date ? data.first_air_date.split('-').reverse().join('/') : 'N/A'  }</p>
+                        <p>Language : <span className="uppercase">{data.original_language}</span></p>
+                        <div className="w-full  flex flex-wrap  items-center gap-3 pt-2">
+                          <span className="w-14 h-14  bg-black p-1 rounded-full multi">
+                            <CircularProgress  percentage={data.vote_average.toFixed(1) * 10}/>
+                          </span>
+                          <p className='text-lg font-semibold'>User Score</p>
+                        </div>
+                        <div className="flex gap-3">
+                          <p className='text-lg font-semibold'>Genre:</p>
+                          {data.genre_ids.map((item, index) => (
+                            <span key={index}>{item}</span>
+                          ))}
+                        </div>
+                        <div className="pt-3">
+                          <p className='text-lg font-semibold pb-2'>Overview</p>
+                          <span className=' '>{data.overview}</span>
+                        </div>
+                        <div className=" mt-4">
+                          <button className='flex gap-2 items-center text-white  border bg-gradient-to-r from-[#1F1C18] to-[#8E0E00]  sm:px-6 px-2 py-2 text-base rounded-full  active:bg-gradient-to-r  active:from-[#8E0E00]  active:to-[#1F1C18] transition-all duration-300 scale-[1] hover:scale-[1.1z]'> <FaPlay/> Play Trailer</button>
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div> 
+        </div>
+    </div>
+    </div>
